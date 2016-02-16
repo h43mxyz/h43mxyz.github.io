@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WebRTC</title>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="WebRTC Experiments, video and audio chat."/>
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" sizes="16x16 24x24 32x32 64x64"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<style>
+			body, html, div, nav {
+				overflow: hidden;
+				text-align: center;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				color: white;
+				background: #080808 url(img/logo-small.svg) no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}	
+			img {
+				width: 10%;
+				max-width: 100%;
+				-webkit-transition: 0.1s;
+				transition: 0.1s;
+			}		
+			img:hover {
+				opacity:.7;
+			}	
+			nav {
+				display: block;
+				max-width: 900px;
+				min-width: 320px;
+				width: 80%;
+				margin: 20% auto ;
+			}
+			nav a{
+				padding: 1em;
+			}
+			#single,#multi {
+				display:none
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<a id="single" href="single.html" title="Single"><img src="img/icon-single.svg" alt="single" title="Up to 2 users"></a>
+			<a href="help.html" title="Help"><img src="img/icon-help.svg" alt="help" title="Help"></a>
+			<a id="multi" href="multi.html" title="Conference"><img src="img/icon-multi.svg" alt="multi" title="Up to 25 users"></a>
+		</nav>
+		<script>
+			if (navigator.mozGetUserMedia||navigator.webkitGetUserMedia) {
+				document.getElementById('single').style.display = 'inline';
+				document.getElementById('multi').style.display = 'inline';
+			}
+		</script>
+	</body>
+</html>
